@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" 
+    rel="stylesheet">
+    <title>Birthday Template - StudyMuch "studymuch.in"</title>
+    <style>
+body {
+    background: url("wishbdy1.jpg") no-repeat center center fixed;
+    background-size:200%;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    width: 100%;
+    margin: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.heart {
+    font-size: 60px;
+    cursor: pointer;
+    margin: 20px;
+    color:red;
+    transition: transform 0.3s, opacity 0.3s;
+}
+.happy-birthday {
+    font-size: 30px;
+    color: rgb(162, 0, 255);
+    font-family: "Lilita One", sans-serif;
+    font-weight: 200;
+    transition: transform 0.5s, opacity 0.5s;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+.bounce {
+    animation: bounce 1s infinite;
+}
+#bdywish{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+#bdywish h3{
+  font-size: 50px;
+  background: linear-gradient(65deg, rgb(0, 128, 255),
+   rgb(195, 0, 255), red);
+  -webkit-background-clip: text;
+  background-color: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0px;
+  font-style: normal;
+}
+#msg{
+   margin-top: 5px;
+   font-size: 20px;
+   color: white;
+}
+#girlimg{
+    width: 100px;
+    height: 80px;
+}
+.heart-frame {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border: 3px solid rgb(123, 0, 255);
+    box-shadow: 2px 7px 10px rgb(123, 0, 255);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.heart-frame img {
+    width: 100%;
+    height: 100%; 
+    border-radius: 50%;
+}
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="bdywish"><h3>Happy Birthday Sneha ! </h3> <br>
+            <div class="heart-frame">
+                <img src="41.jpg"  alt="Heart Image">
+            </div>
+        <p id="msg" style="color: #ee2f2f;">Touch Heart for Surprise Msg 🫰💖</p>
+        </div>
+        <div class="heart" onclick="changeToText(this, 'Happy Birthday')">💖</div>
+        <div class="heart" onclick="changeToText(this, 'May your dreams come true !')">💖</div>
+        <div class="heart" onclick="changeToText(this, 'You look like a little angel !')">💗</div>
+        <div class="heart" onclick="changeToText(this, 'Wishing you joy!')">💞</div>
+        <div class="heart" onclick="changeToText(this, 'You are very Gorgeous!')">💖</div>
+        <div class="heart" onclick="changeToText(this, '4 Dec 2021 ')">💞</div>
+        <div class="heart" onclick="changeToText(this, 'You are special for Me!')">💖</div>
+        <div class="heart" onclick="changeToText(this, 'You are my one and only!')">❣️</div>
+        <div class="heart" onclick="changeToText(this, '31 Dec 2021')">💙</div>
+        <div class="heart" onclick="changeToText(this, '28 Feb & 1st March')">💕</div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const hearts = document.querySelectorAll('.heart');
+        hearts.forEach(heart => {
+        const randomX = Math.random() * (window.innerWidth - 100);
+        const randomY = Math.random() * (window.innerHeight - 100);
+        heart.style.position = 'absolute';
+        heart.style.left = `${randomX}px`;
+        heart.style.top = `${randomY}px`;
+        heart.classList.add('bounce');
+    });
+    });
+        function changeToText(element, text) {
+        element.style.transform = 'scale(0)';
+        element.style.opacity = '0';
+        setTimeout(() => {
+        element.innerHTML = text;
+        element.classList.remove("heart", "bounce");
+        element.classList.add("happy-birthday");
+        element.style.transform = 'scale(1)';
+        element.style.opacity = '1';
+        }, 500);
+        }
+  </script>
+    
+
+</body>
+</html>
